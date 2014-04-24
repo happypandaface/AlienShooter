@@ -1,0 +1,77 @@
+Buildfile: C:\work\libgdxProjectsBig\alienShooter\alienShooter-android\build.xml
+
+-set-mode-check:
+
+-set-debug-files:
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 22.3.0
+ [checkenv] Installed at C:\gams\adt-bundle-windows-x86_64-20131030\sdk
+
+-setup:
+     [echo] Project Name: MainActivity
+  [gettype] Project Type: Application
+
+-set-debug-mode:
+
+-debug-obfuscation-check:
+
+-pre-build:
+
+-build-setup:
+[getbuildtools] Using latest Build Tools: 19.0.1
+     [echo] Resolving Build Target for MainActivity...
+[gettarget] Project Target:   Android 4.4.2
+[gettarget] API level:        19
+     [echo] ----------
+     [echo] Creating output directories if needed...
+    [mkdir] Created dir: C:\work\libgdxProjectsBig\alienShooter\alienShooter-android\build\rsObj
+    [mkdir] Created dir: C:\work\libgdxProjectsBig\alienShooter\alienShooter-android\build\rsLibs
+     [echo] ----------
+     [echo] Resolving Dependencies for MainActivity...
+[dependency] Library dependencies:
+[dependency] No Libraries
+[dependency] 
+[dependency] ------------------
+     [echo] ----------
+     [echo] Building Libraries with 'debug'...
+   [subant] No sub-builds to iterate on
+
+-code-gen:
+[mergemanifest] Found Deleted Target File
+[mergemanifest] Merging AndroidManifest files into one.
+[mergemanifest] Manifest merger disabled. Using project manifest only.
+     [echo] Handling aidl files...
+     [aidl] No AIDL files to compile.
+     [echo] ----------
+     [echo] Handling RenderScript files...
+     [echo] ----------
+     [echo] Handling Resources...
+     [aapt] Found Deleted Target File
+     [aapt] Generating resource IDs...
+     [echo] ----------
+     [echo] Handling BuildConfig class...
+[buildconfig] Generating BuildConfig class.
+
+-pre-compile:
+
+-compile:
+    [javac] Compiling 3 source files to C:\work\libgdxProjectsBig\alienShooter\alienShooter-android\build\classes
+    [javac] C:\work\libgdxProjectsBig\alienShooter\alienShooter-android\src\com\me\alienShooter\MainActivity.java:8: error: cannot access Application
+    [javac] public class MainActivity extends AndroidApplication {
+    [javac]        ^
+    [javac]   class file for com.badlogic.gdx.Application not found
+    [javac] C:\work\libgdxProjectsBig\alienShooter\alienShooter-android\src\com\me\alienShooter\MainActivity.java:11: error: cannot find symbol
+    [javac]         super.onCreate(savedInstanceState);
+    [javac]         ^
+    [javac]   symbol:   variable super
+    [javac]   location: class MainActivity
+    [javac] C:\work\libgdxProjectsBig\alienShooter\alienShooter-android\src\com\me\alienShooter\MainActivity.java:16: error: cannot find symbol
+    [javac]         initialize(new AlienShooter(), cfg);
+    [javac]                        ^
+    [javac]   symbol:   class AlienShooter
+    [javac]   location: class MainActivity
+    [javac] C:\work\libgdxProjectsBig\alienShooter\alienShooter-android\src\com\me\alienShooter\MainActivity.java:9: error: method does not override or implement a method from a supertype
+    [javac]     @Override
+    [javac]     ^
+    [javac] 4 errors

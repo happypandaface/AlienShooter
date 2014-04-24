@@ -1,0 +1,56 @@
+{
+	"version": [  0,   1], 
+	"id": "", 
+	"meshes": [
+		{
+			"attributes": ["POSITION", "NORMAL", "TEXCOORD0"], 
+			"vertices": [
+				 6.888297,  6.888297,  13.673410,  0.000000, -1.000000,  0.000000,  0.999900,  0.000100, 
+				-6.888297,  6.888297,  13.673410,  0.000000, -1.000000,  0.000000,  0.000100,  0.000100, 
+				 6.888297,  6.888297, -0.103184,  0.000000, -1.000000,  0.000000,  0.999900,  0.999900, 
+				-6.888297,  6.888297, -0.103184,  0.000000, -1.000000,  0.000000,  0.000100,  0.999900
+			], 
+			"parts": [
+				{
+					"id": "shape1_part1", 
+					"type": "TRIANGLES", 
+					"indices": [  0,   1,   2,   1,   3,   2]
+				}
+			]
+		}
+	], 
+	"materials": [
+		{
+			"id": "wallTex__wallTexture_png", 
+			"diffuse": [ 0.800000,  0.800000,  0.800000], 
+			"emissive": [ 0.800000,  0.800000,  0.800000], 
+			"textures": [
+				{
+					"id": "wallTexture_png", 
+					"filename": "wallTexture.png", 
+					"type": "DIFFUSE"
+				}
+			]
+		}
+	], 
+	"nodes": [
+		{
+			"id": "Cube", 
+			"rotation": [-0.707107,  0.000000,  0.000000,  0.707107], 
+			"scale": [ 1.000000,  1.000000,  1.000000], 
+			"parts": [
+				{
+					"meshpartid": "shape1_part1", 
+					"materialid": "wallTex__wallTexture_png", 
+					"uvMapping": [[  0]]
+				}
+			]
+		}
+	], 
+	"animations": [
+		{
+			"id": "Default Take", 
+			"bones": []
+		}
+	]
+}
