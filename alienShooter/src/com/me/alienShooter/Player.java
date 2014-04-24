@@ -1,5 +1,6 @@
 package com.me.alienShooter;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Quaternion;
@@ -110,5 +111,17 @@ public class Player implements Moveable
 	@Override
 	public float getMoveRotation() {
 		return getRotation();
+	}
+
+	public void reset() {
+		PerspectiveCamera cam = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		this.cam = cam;
+		this.cam.position.set(1, 1, 1);
+//		cam.rotate(30, 0, 1, 0);
+		//cam.lookAt(0,0,0);
+		this.cam.near = 0.1f;
+		this.cam.far = 300f;
+		this.cam.update();
+		this.rotation = 0;
 	}
 }

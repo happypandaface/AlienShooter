@@ -266,14 +266,7 @@ public class SpaceGame implements SpaceScene, InputProcessor, ActionListener, Ob
 	}
 	private void resetPlayer()
 	{
-		PerspectiveCamera cam = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-		player.cam = cam;
-		player.cam.position.set(1, 1, 1);
-//		cam.rotate(30, 0, 1, 0);
-		//cam.lookAt(0,0,0);
-		player.cam.near = 0.1f;
-		player.cam.far = 300f;
-		player.cam.update();
+		player.reset();
 	}
 	
 	private void doneLoading()
