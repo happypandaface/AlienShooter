@@ -124,7 +124,9 @@ public class MovementAction extends SpaceAction
 					}
 					tempMoveVector.scl(amt);
 					currProgress += amt;
-					tempMoveVector.mul(mover.getTransform(moverTrans));
+					//tempMoveVector.mul(mover.getTransform(moverTrans));
+					//tempMoveVector.mul(new Matrix4().set(new Quaternion(new Vector3(0, 1, 0), mover.getRotation())));
+					tempMoveVector.mul(new Matrix4().setTranslation(mover.getPosition(new Vector3())).mul(new Matrix4().set(new Quaternion(new Vector3(0, 1, 0), mover.getMoveRotation()))));
 					//tempMoveVector.sub(cam.position);
 					//cam.position.add(tempMoveVector);
 					gamePos.set(tempMoveVector.x, tempMoveVector.z);

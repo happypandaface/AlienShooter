@@ -34,13 +34,4 @@ public class Vaepalian extends Alien
 		
 		//super(alienModels, alienTextures, alienSounds, effectPool);
 	}
-
-	
-	protected boolean checkIfDead()
-	{
-		if (dieNext || dieEffect.isComplete())
-			return true;
-		return false;
-	}
-	
 }

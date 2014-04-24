@@ -140,7 +140,6 @@ public class GestureHandler implements InputProcessor
 			{
 				if (touchReleased[i] && startDragCount[i] < delayTilFree)
 				{
-					Gdx.app.log("touch", "handled");
 					float dist = startDrag[i].dst(currDrag[i]);
 					// this makes it so the handler doesn't immediately fire when leaving the menu
 					if (!skipTap && dist < deadZone.len())

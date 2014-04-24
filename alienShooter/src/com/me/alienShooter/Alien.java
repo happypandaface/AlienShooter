@@ -143,6 +143,8 @@ public class Alien implements Poolable, Moveable, ActionListener, Dies
 	private List<DeathListener> deathListeners = new ArrayList<DeathListener>();
 	private AttackAnimation atkAct;
 	private float attackRange = 1.5f;
+	protected float baseRot = 0;
+	protected Vector3 horizAngles = new Vector3(1, 0, 0);
 	
 	public Alien()
 	{
@@ -158,10 +160,10 @@ public class Alien implements Poolable, Moveable, ActionListener, Dies
 	{
 		alienMI.transform.set(new Matrix4());
 		alienMI.transform.setTranslation(pos);
-		turnQuat.set(upVec, rotation);
+		turnQuat.set(upVec, rotation+baseRot);
 		turnMat.set(turnQuat);
 		alienMI.transform.mul(turnMat);
-		horizQuat.setEulerAngles(0, currHorizRot, 0);
+		horizQuat.set(horizAngles, currHorizRot);
 		alienMI.transform.mul(horizMat.set(horizQuat));
 	}
 	
@@ -554,5 +556,10 @@ public class Alien implements Poolable, Moveable, ActionListener, Dies
 	public Dies addDeathListener(DeathListener dl) {
 		deathListeners.add(dl);
 		return this;
+	}
+
+	@Override
+	public float getMoveRotation() {
+		return 180-getRotation()-90;
 	}
 }

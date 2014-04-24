@@ -140,6 +140,13 @@ public class SpaceGame implements SpaceScene, InputProcessor, ActionListener, Ob
 			return new Vaepalian(alienModels, alienTextures, alienSounds, aDeathEffectPool);
 		}
     };
+    private final Pool<FlyGuy> flyGuyPool = new Pool<FlyGuy>()
+    {
+		@Override
+		protected FlyGuy newObject() {
+			return new FlyGuy(alienModels, alienTextures, alienSounds, aDeathEffectPool, stuffHolder);
+		}
+    };
     private final Pool<Syringe> syringePool = new Pool<Syringe>()
     {
 		@Override
@@ -210,6 +217,8 @@ public class SpaceGame implements SpaceScene, InputProcessor, ActionListener, Ob
         assets.load("data/pukeButtonSmall.png", Texture.class);
         assets.load("data/gunIconSmall.png", Texture.class);
         assets.load("data/radioIcon.png", Texture.class);
+        assets.load("data/flyGuy.g3dj", Model.class);
+        assets.load("data/wingFlap.png", Texture.class);
         //assets.load("data/fullShark.g3dj", Model.class);
         
         
@@ -298,6 +307,8 @@ public class SpaceGame implements SpaceScene, InputProcessor, ActionListener, Ob
 		stuffHolder.putTex("spaceRifle", assets.get("data/gunIconSmall.png", Texture.class));
 		stuffHolder.putTex("radioIcon", assets.get("data/radioIcon.png", Texture.class));
 		stuffHolder.putModel("radio", assets.get("data/spaceRadio.g3dj", Model.class));
+		stuffHolder.putModel("flyGuy", assets.get("data/flyGuy.g3dj", Model.class));
+		stuffHolder.putTex("wingFlap", assets.get("data/wingFlap.png", Texture.class));
 		
 		zoneModels = new Array<Model>();
 		zoneModels.add(assets.get("data/stupidPlane.g3dj", Model.class));
@@ -377,6 +388,7 @@ public class SpaceGame implements SpaceScene, InputProcessor, ActionListener, Ob
 			as.setMaxAliens(2);
 			newSyringe(0, 3, 0, "red");
 			newRadio(0, 2, 0, "red");
+			newAlien(0, 4, 0, "flyGuy");
 			
 			environMeshArr.clear();
 			AGU.getModelInstanceArrTriangles(instances, environMeshArr);
@@ -556,6 +568,9 @@ public class SpaceGame implements SpaceScene, InputProcessor, ActionListener, Ob
 		}else if (type == "vaepalian")
 		{
 			makingAlien = vaepalianPool.obtain();
+		}else if (type == "flyGuy")
+		{
+			makingAlien = flyGuyPool.obtain();
 		}
 		if (makingAlien == null)
 			return null;

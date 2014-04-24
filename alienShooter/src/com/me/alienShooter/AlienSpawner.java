@@ -166,4 +166,10 @@ public class AlienSpawner implements Poolable, Moveable, DeathListener, GetsHit
 			return true;
 		return false;
 	}
+
+	@Override
+	public float getMoveRotation() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

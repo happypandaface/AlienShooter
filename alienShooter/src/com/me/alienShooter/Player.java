@@ -13,6 +13,7 @@ public class Player implements Moveable
 	private Vector2 tilePos;
 	private GameMenu gMenu;
 	private Inventory inv;
+	private float rotation;
 	
 	public Player()
 	{
@@ -93,8 +94,7 @@ public class Player implements Moveable
 
 	@Override
 	public float getRotation() {
-		// TODO Auto-generated method stub
-		return 0;
+		return rotation;
 	}
 
 	private Vector3 upVec = new Vector3(0, 1 ,0);
@@ -102,7 +102,13 @@ public class Player implements Moveable
 	@Override
 	public void rotateDeg(float amt)
 	{
+		rotation += amt;
 		turnQuat.set(upVec, amt);
 		cam.rotate(turnQuat);
+	}
+
+	@Override
+	public float getMoveRotation() {
+		return getRotation();
 	}
 }

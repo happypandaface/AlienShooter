@@ -14,6 +14,7 @@ public interface Moveable
 	public Vector3 getPosition(Vector3 v);
 	public Vector2 getPosition(Vector2 v);
 	public float getRotation();
+	public float getMoveRotation();
 	public Matrix4 getTransform(Matrix4 trans);
 	public void setTile(GameTile gTile);
 	public Vector2 getLogicalPos(Vector2 v, Vector2 tileDim);

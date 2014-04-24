@@ -90,4 +90,10 @@ public class BaseObject implements Poolable, Moveable
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public float getMoveRotation() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
